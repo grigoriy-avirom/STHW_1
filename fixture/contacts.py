@@ -6,7 +6,7 @@ class ContactsHelper:
     def __init__(self, app):
         self.app = app
 
-    def create_contact(self, contacts):
+    def create(self, contacts):
         wd = self.app.wd
         # init contact creation
         wd.find_element_by_link_text("add new").click()
