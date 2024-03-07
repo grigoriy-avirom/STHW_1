@@ -70,6 +70,11 @@ class ContactsHelper:
         # save new contact
         wd.find_element_by_xpath("//div[@id='content']/form/input[20]").click()
 
+    def delete_first_contact(self):
+        wd = self.app.wd
+        wd.find_element_by_name('selected[]').click()
+        wd.find_element_by_xpath("//input[@value='Delete']").click()
+
     def return_to_contacts_page(self):
         wd = self.app.wd
         wd.find_element_by_link_text("home").click()
