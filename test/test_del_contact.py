@@ -1,4 +1,4 @@
-from model.contacts import Contacts
+# -*- coding: utf-8 -*-
 
 
 def test_delete_first_contact(app):
