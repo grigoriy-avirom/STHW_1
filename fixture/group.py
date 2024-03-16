@@ -30,10 +30,10 @@ class GroupHelper:
         wd = self.app.wd
         self.open_groups_page()
         # init group edition
-        wd.find_element_by_name('selected[]').click()
+        self.select_first_group()
         wd.find_element_by_name('edit').click()
         # fill group fields
-        self.fill_group_fields(group)
+        self.fill_group_form(group)
         # submit group edition
         wd.find_element_by_name("update").click()
         self.open_groups_page()
@@ -48,10 +48,9 @@ class GroupHelper:
 
     def select_first_group(self):
         wd = self.app.wd
-        # select first group
         wd.find_element_by_name('selected[]').click()
 
-    def fill_group_fields(self, group):
+    def fill_group_form(self, group):
         wd = self.app.wd
         self.change_field_value("group_name", group.name)
         self.change_field_value("group_header", group.header)
@@ -71,7 +70,7 @@ class GroupHelper:
         # open modification form
         wd.find_element_by_name('edit').click()
         # fill group form
-        self.fill_group_fields(new_group_data)
+        self.fill_group_form(new_group_data)
         # submit modification
         wd.find_element_by_name("update").click()
         self.open_groups_page()
