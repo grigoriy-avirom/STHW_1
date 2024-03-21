@@ -1,5 +1,5 @@
 from selenium.webdriver.support.select import Select
-
+from model.contacts import Contacts
 
 class ContactsHelper:
 
@@ -23,18 +23,6 @@ class ContactsHelper:
         self.fill_contacts_form(contacts)
         # save new contact
         wd.find_element_by_xpath("//div[@id='content']/form/input[20]").click()
-        self.open_contacts_page()
-
-    def edit(self, contacts):
-        wd = self.app.wd
-        self.open_contacts_page()
-        # init contact edition
-        wd.find_element_by_name('selected[]').click()
-        wd.find_element_by_xpath("//img[@alt='Edit']").click()
-        # fill contacts fields
-        self.fill_contacts_form(contacts)
-        # save new contact
-        wd.find_element_by_name("update").click()
         self.open_contacts_page()
 
     def delete_first_contact(self):
@@ -101,3 +89,13 @@ class ContactsHelper:
         wd = self.app.wd
         self.open_contacts_page()
         return len(wd.find_elements_by_name('selected[]'))
+
+    def get_contact_list(self):
+        wd = self.app.wd
+        self.open_contacts_page()
+        contacts = []
+        for element in wd.find_elements_by_xpath("//tr[@name='entry']"):
+            id = element.find_element_by_name("selected[]").get_attribute("value")
+            column = element.find_elements_by_tag_name("td")
+            contacts.append(Contacts(lastname=column[1].text, firstname=column[2].text, id=id))
+        return contacts

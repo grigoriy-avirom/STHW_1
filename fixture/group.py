@@ -1,5 +1,6 @@
 from model.group import Group
 
+
 class GroupHelper:
 
     def __init__(self, app):
@@ -19,18 +20,6 @@ class GroupHelper:
         self.fill_group_form(group)
         # submit group creation
         wd.find_element_by_name("submit").click()
-        self.open_groups_page()
-
-    def edit(self, group):
-        wd = self.app.wd
-        self.open_groups_page()
-        # init group edition
-        self.select_first_group()
-        wd.find_element_by_name('edit').click()
-        # fill group fields
-        self.fill_group_form(group)
-        # submit group edition
-        wd.find_element_by_name("update").click()
         self.open_groups_page()
 
     def delete_first_group(self):
