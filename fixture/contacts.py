@@ -27,9 +27,12 @@ class ContactsHelper:
         self.contacts_cache = None
 
     def delete_first_contact(self):
+        self.delete_contact_by_index(0)
+
+    def delete_contact_by_index(self, index):
         wd = self.app.wd
         self.open_contacts_page()
-        self.select_first_contact()
+        self.select_contact_by_index(index)
         wd.find_element_by_xpath("//input[@value='Delete']").click()
         self.open_contacts_page()
         self.contacts_cache = None
@@ -59,8 +62,11 @@ class ContactsHelper:
         self.change_field_value("ayear", contacts.ayear)
 
     def select_first_contact(self):
+        self.select_contact_by_index(0)
+
+    def select_contact_by_index(self, index):
         wd = self.app.wd
-        wd.find_element_by_name('selected[]').click()
+        wd.find_elements_by_name('selected[]')[index].click()
 
     def change_field_value(self, field_name, text):
         wd = self.app.wd
@@ -75,12 +81,15 @@ class ContactsHelper:
             wd.find_element_by_name(date_name).click()
             Select(wd.find_element_by_name(date_name)).select_by_visible_text(text)
 
-    def modify_first_contact(self, new_contact_data):
+    def modify_first_contact(self):
+        self.modify_contact_by_index(0)
+
+    def modify_contact_by_index(self, index, new_contact_data):
         wd = self.app.wd
         self.open_contacts_page()
-        self.select_first_contact()
+        self.select_contact_by_index(index)
         # open modification form
-        wd.find_element_by_xpath("//img[@alt='Edit']").click()
+        wd.find_elements_by_xpath("//img[@alt='Edit']")[index].click()
         # fill group form
         self.fill_contacts_form(new_contact_data)
         # submit modification
