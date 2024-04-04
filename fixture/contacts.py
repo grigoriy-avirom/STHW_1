@@ -173,7 +173,7 @@ class ContactsHelper:
         return "\n".join(filter(lambda x: x != "",
                                 map(lambda x: self.clear(x),
                                     filter(lambda x: x is not None,
-                                           [contact.home, contact.work, contact.mobile]))))
+                                           [contact.home, contact.mobile, contact.work]))))
 
     def merge_emails_like_on_home_page(self, contact):
         return "\n".join(filter(lambda x: x != "",

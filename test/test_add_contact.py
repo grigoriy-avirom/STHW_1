@@ -5,7 +5,7 @@ import random
 import string
 
 def random_string(prefix, maxlen):
-    symbols = string.ascii_letters + string.digits + " " * 10
+    symbols = string.ascii_letters + string.digits + " "*10
     return prefix + "".join([random.choice(symbols) for i in range(random.randrange(maxlen))])
 
 def random_digits(maxlen):
@@ -14,7 +14,7 @@ def random_digits(maxlen):
 
 def random_email():
     symbols_for_mail_name = string.ascii_letters + string.digits + "." + "-" + "_"
-    mail_name = "".join([random.choice(symbols_for_mail_name) for i in range(random.randrange(1, 20))])
+    mail_name = "".join([random.choice(symbols_for_mail_name) for i in range(random.randrange(2, 10))])
     domain_name = "".join([random.choice(string.ascii_letters) for i in range(random.randrange(2, 10))])
     country_name = "".join([random.choice(string.ascii_letters) for i in range(random.randrange(2, 5))])
     generated_email = f"{mail_name}@{domain_name}.{country_name}"
@@ -25,9 +25,9 @@ testdata = [
              middlename=random_string("middlenamename", 10),
              lastname=random_string("lastname", 10),
              nickname=random_string("nickname", 10),
-             title=random_string("title", 20),
-             company=random_string("company", 20),
-             address=random_string("address", 20),
+             title=random_string("title", 10),
+             company=random_string("company", 10),
+             address=random_string("address", 10),
              home=random_digits(11),
              mobile=random_digits(11),
              work=random_digits(11),
