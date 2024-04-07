@@ -15,7 +15,7 @@ except getopt.GetoptError as err:
     sys.exit(2)
 
 n = 5
-f = "C:/StudySoftwareTesting/STHW_1/data/groups.json"
+f = "data/groups.json"
 
 for o, a in opts:
     if o == "-n":
@@ -25,7 +25,7 @@ for o, a in opts:
 
 
 def random_string(prefix, maxlen):
-    symbols = string.ascii_letters + string.digits + string.punctuation + " " * 10
+    symbols = string.ascii_letters + string.digits + string.punctuation + " " * 5
     return prefix + "".join([random.choice(symbols) for i in range(random.randrange(maxlen))])
 
 
