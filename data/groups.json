@@ -15,16 +15,16 @@
   },
   {
     "py/object": "model.group.Group",
-    "name": "name_= ",
+    "name": "name_=",
     "header": "headerp",
     "footer": "footerwX0m",
     "id": null
   },
   {
     "py/object": "model.group.Group",
-    "name": "name8 6",
+    "name": "name86",
     "header": "header84Ng",
-    "footer": "footer#\\",
+    "footer": "footer#",
     "id": null
   }
 ]
