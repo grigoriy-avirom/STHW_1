@@ -1,5 +1,6 @@
 import pymysql
 from model.group import Group
+from model.contacts import Contacts
 
 
 class DbFixture:
@@ -19,6 +20,19 @@ class DbFixture:
             for row in cursor:
                 (id, name, header, footer) = row
                 list.append(Group(id=str(id), name=name, header=header, footer=footer))
+        finally:
+            cursor.close()
+        return list
+
+    def get_contact_list(self):
+        list = []
+        cursor = self.connection.cursor()
+        try:
+            cursor.execute("select id, firstname, lastname from addressbook")
+            # where deprecated='NULL' не добавлял, всё удаляется нормально
+            for row in cursor:
+                (id, firstname, lastname) = row
+                list.append(Contacts(id=str(id), firstname=firstname, lastname=lastname))
         finally:
             cursor.close()
         return list
