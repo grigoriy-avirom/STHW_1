@@ -1,4 +1,5 @@
 import pymysql
+import pymysql.cursors
 from model.group import Group
 from model.contacts import Contacts
 
