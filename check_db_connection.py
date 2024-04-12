@@ -1,8 +1,8 @@
 import pymysql.cursors
 from fixture.db import DbFixture
+from fixture.orm import ORMFixture
 
-db = DbFixture(host="127.0.0.1", name="addressbook", user="root", password="")
-
+# db = DbFixture(host="127.0.0.1", name="addressbook", user="root", password="")
 # try:
 #     groups = db.get_group_list()
 #     for group in groups:
@@ -12,10 +12,28 @@ db = DbFixture(host="127.0.0.1", name="addressbook", user="root", password="")
 #     db.destroy()
 
 
+# try:
+#     contacts = db.get_contact_list()
+#     for contact in contacts:
+#         print(contact)
+#     print(len(contacts))
+# finally:
+#     db.destroy()
+
+db = ORMFixture(host="127.0.0.1", name="addressbook", user="root", password="")
+
+# try:
+#     l = db.get_group_list()
+#     for item in l:
+#         print(item)
+#     print(len(l))
+# finally:
+#     pass
+
 try:
-    contacts = db.get_contact_list()
-    for contact in contacts:
-        print(contact)
-    print(len(contacts))
+    l = db.get_contact_list()
+    for item in l:
+        print(item)
+    print(len(l))
 finally:
-    db.destroy()
+    pass
