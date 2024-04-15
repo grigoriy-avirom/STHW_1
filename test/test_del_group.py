@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 import random
-
 from model.group import Group
-from random import randrange
 
 
 def test_delete_some_group(app, db, check_ui):
