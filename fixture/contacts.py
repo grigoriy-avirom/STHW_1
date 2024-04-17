@@ -104,11 +104,8 @@ class ContactsHelper:
         wd = self.app.wd
         self.open_contacts_page()
         self.select_contact_by_index(index)
-        # open modification form
         wd.find_elements_by_xpath("//img[@alt='Edit']")[index].click()
-        # fill group form
         self.fill_contacts_form(new_contact_data)
-        # submit modification
         wd.find_element_by_name("update").click()
         self.open_contacts_page()
         self.contacts_cache = None
@@ -120,7 +117,7 @@ class ContactsHelper:
         self.fill_contacts_form(contact)
         wd.find_element_by_name("update").click()
         self.return_to_home_page()
-        self.contact_cache = None
+        self.contacts_cache = None
 
     def count(self):
         wd = self.app.wd
