@@ -1,4 +1,5 @@
 from model.group import Group
+from selenium.webdriver.support.ui import Select
 
 
 class GroupHelper:
@@ -112,3 +113,12 @@ class GroupHelper:
                 id = element.find_element_by_name("selected[]").get_attribute("value")
                 self.group_cache.append(Group(name=text, id=id))
         return list(self.group_cache)
+
+    def delete_contact_from_group(self, index, group_id):
+        wd = self.app.wd
+        if not (wd.current_url.endswith("/addressbook/")):
+            wd.find_element_by_link_text("home").click()
+        wd.find_element_by_name("group").click()
+        Select(wd.find_element_by_name("group")).select_by_value('%s' % group_id)
+        wd.find_elements_by_name("selected[]")[index].click()
+        wd.find_element_by_name("remove").click()
