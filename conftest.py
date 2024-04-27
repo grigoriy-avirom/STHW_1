@@ -47,8 +47,9 @@ def db(request):
 @pytest.fixture(scope='session', autouse=True)
 def stop(request):
     def fin():
-        fixture.session.ensure_logout()
-        fixture.destroy()
+        pass
+        # fixture.session.ensure_logout()
+        # fixture.destroy()
 
     request.addfinalizer(fin)
     return fixture
