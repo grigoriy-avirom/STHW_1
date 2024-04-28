@@ -1,0 +1,190 @@
+[
+  {
+    "keyword": "Feature",
+    "uri": "bdd\\groups.feature",
+    "name": "bdd\\groups.feature",
+    "id": "bdd\\groups.feature",
+    "line": 1,
+    "description": "",
+    "tags": [],
+    "elements": [
+      {
+        "keyword": "Scenario",
+        "id": "test_add_new_group[name1-header1-footer1]",
+        "name": "Add new group",
+        "line": 1,
+        "description": "",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Given",
+            "name": "a group list",
+            "line": 2,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5467699
+            }
+          },
+          {
+            "keyword": "Given",
+            "name": "a group with name1, header1 and footer1",
+            "line": 3,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "duration": 63999
+            }
+          },
+          {
+            "keyword": "When",
+            "name": "I add the group to the list",
+            "line": 4,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6197200000
+            }
+          },
+          {
+            "keyword": "Then",
+            "name": "the new group list is equal to the old list with the added group",
+            "line": 5,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "duration": 831800
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "id": "test_add_new_group[name2-header2-footer2]",
+        "name": "Add new group",
+        "line": 1,
+        "description": "",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Given",
+            "name": "a group list",
+            "line": 2,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "duration": 865000
+            }
+          },
+          {
+            "keyword": "Given",
+            "name": "a group with name2, header2 and footer2",
+            "line": 3,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "duration": 62800
+            }
+          },
+          {
+            "keyword": "When",
+            "name": "I add the group to the list",
+            "line": 4,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "duration": 951700200
+            }
+          },
+          {
+            "keyword": "Then",
+            "name": "the new group list is equal to the old list with the added group",
+            "line": 5,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "duration": 878100
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "id": "test_delete_group",
+        "name": "Delete a group",
+        "line": 13,
+        "description": "",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Given",
+            "name": "a non-empty group list",
+            "line": 14,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "duration": 57594099
+            }
+          },
+          {
+            "keyword": "Given",
+            "name": "a random group from the list",
+            "line": 15,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "duration": 76199
+            }
+          },
+          {
+            "keyword": "When",
+            "name": "I delete the group to the list",
+            "line": 16,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "duration": 369513300
+            }
+          },
+          {
+            "keyword": "Then",
+            "name": "the new group list is equal to the old list without the deleted group",
+            "line": 17,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "duration": 12211999
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
