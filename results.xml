@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuites>
+    <testsuite name="pytest" errors="0" failures="0" skipped="0" tests="4" time="9.409"
+               timestamp="2024-04-28T12:25:46.360317" hostname="AVIROM-PC">
+        <testcase classname="test.test_add_group" name="test_add_group[None:; ; ]" time="5.975"/>
+        <testcase classname="test.test_add_group" name="test_add_group[None:nameI)qiC}ID; header]:eaI58; footerH&lt;:h]"
+                  time="0.924"/>
+        <testcase classname="test.test_add_group" name="test_add_group[None:name_=; headerp; footerwX0m]" time="0.907"/>
+        <testcase classname="test.test_add_group" name="test_add_group[None:name86; header84Ng; footer#]" time="1.562"/>
+    </testsuite>
+</testsuites>
